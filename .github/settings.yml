@@ -2,7 +2,7 @@
 _extends: .github
 repository:
   name: aws-eks-idp-roles
-  description: This component installs the `idp-roles` for EKS clusters
+  description: "This component installs the `idp-roles` for EKS clusters"
   homepage: https://cloudposse.com/accelerate
   topics: terraform, terraform-component
 
