@@ -4,7 +4,7 @@ locals {
 
 module "idp_roles" {
   source  = "cloudposse/helm-release/aws"
-  version = "0.10.0"
+  version = "0.10.1"
 
   # Required arguments
   name                 = module.this.name
