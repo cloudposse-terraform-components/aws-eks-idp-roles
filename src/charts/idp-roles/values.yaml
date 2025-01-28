@@ -20,7 +20,7 @@ root_client_role: "idp:ops"
 
 # PowerUser
 poweruser_crb_name: "idp-poweruser"
-poweruser_cluster_role: "edit"
+poweruser_cluster_role: "idp-poweruser"
 poweruser_client_role: "idp:poweruser"
 
 # Observer
