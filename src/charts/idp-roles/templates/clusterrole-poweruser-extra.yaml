@@ -29,7 +29,6 @@ rules:
       - delete
   - apiGroups: [""]
     resources:
-      - nodes
       - configmaps
       - persistentvolumeclaims
       - persistentvolumes
