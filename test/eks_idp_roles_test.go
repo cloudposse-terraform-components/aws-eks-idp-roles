@@ -3,27 +3,27 @@ package test
 import (
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/terraform"
+	helper "github.com/cloudposse/test-helpers/pkg/atmos/component-helper"
 )
 
-func TestEksIdpRoles(t *testing.T) {
-	t.Parallel()
 
-	// Root folder where terraform files should be (up one level from /test)
-	terraformDir := "../src"
+type ComponentSuite struct {
+	helper.TestSuite
+}
 
-	// Terraform options for testing
-	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: terraformDir,
-		// Set any variables needed for testing
-		Vars: map[string]interface{}{
-			// Add any required variables here
-		},
-	})
 
-	// Init terraform
-	terraform.Init(t, terraformOptions)
+func (s *ComponentSuite) TestDisabled() {
+	const component = "eks/idp-roles/disabled"
+	const stack = "default-test"
 
-	// The rest of this test is intentionally left blank
-	// We are still migrating tests to components and this is a placeholder
+	s.VendorPull()
+
+	s.RunAtmosCommand("init", component, "-s", stack)
+}
+
+
+
+func TestRunEksIdpRolesSuite(t *testing.T) {
+	suite := new(ComponentSuite)
+	helper.Run(t, suite)
 }
