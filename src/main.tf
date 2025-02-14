@@ -1,6 +1,4 @@
 locals {
-  enabled = module.this.enabled
-
   poweruser_namespaces = var.poweruser_namespaces != null ? var.poweruser_namespaces : [var.stage]
   chart_values = merge(var.chart_values, {
     poweruserNamespaces = local.poweruser_namespaces
