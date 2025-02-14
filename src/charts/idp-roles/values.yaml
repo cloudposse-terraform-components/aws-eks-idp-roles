@@ -22,6 +22,9 @@ root_client_role: "idp:ops"
 poweruser_crb_name: "idp-poweruser"
 poweruser_cluster_role: "idp-poweruser"
 poweruser_client_role: "idp:poweruser"
+# List of namespaces where poweruser will have full privileges
+# If empty, poweruser will only have observer and reader permissions cluster-wide
+poweruser_namespaces: []
 
 # Observer
 observer_crb_name: "idp-observer"

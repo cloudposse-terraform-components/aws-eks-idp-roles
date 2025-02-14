@@ -1,15 +1,45 @@
+{{- /* Always create cluster-wide bindings for reader access */ -}}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: {{ .Values.poweruser_crb_name | quote }}
+  name: {{ .Values.poweruser_crb_name }}-ro
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ .Values.poweruser_cluster_role | quote }}
+  name: {{ .Values.reader_cluster_role | quote }}
 subjects:
-- apiGroup: rbac.authorization.k8s.io
-  kind: Group
-  name: {{ .Values.poweruser_client_role | quote }}
-- apiGroup: rbac.authorization.k8s.io
-  kind: User
-  name: {{ .Values.poweruser_client_role | quote }}
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: {{ .Values.poweruser_client_role | quote }}
+
+{{- /* Add namespace-specific poweruser privileges when namespaces are specified */ -}}
+{{- range $ns := .Values.poweruser_namespaces }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ $.Values.poweruser_crb_name }}
+  namespace: {{ $ns }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ $.Values.poweruser_cluster_role | quote }}
+subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: {{ $.Values.poweruser_client_role | quote }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ printf "%s-extra" $.Values.poweruser_crb_name }}
+  namespace: {{ $ns }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ printf "%s-extra" $.Values.poweruser_cluster_role | quote }}
+subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: {{ $.Values.poweruser_client_role | quote }}
+{{- end }}

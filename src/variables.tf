@@ -74,3 +74,9 @@ variable "chart_values" {
   description = "Additional values to yamlencode as `helm_release` values."
   default     = {}
 }
+
+variable "poweruser_namespaces" {
+  type        = list(string)
+  description = "List of namespaces where poweruser extra privileges should be active. Defaults to var.stage when null."
+  default     = null
+}

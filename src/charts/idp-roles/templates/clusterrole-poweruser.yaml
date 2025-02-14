@@ -5,10 +5,4 @@ metadata:
 aggregationRule:
   clusterRoleSelectors:
     - matchLabels:
-        rbac.authorization.k8s.io/aggregate-to-view: "true"
-    - matchLabels:
-        rbac.authorization.k8s.io/aggregate-to-observer: "true"
-    - matchLabels:
-        rbac.authorization.k8s.io/aggregate-to-reader: "true"
-    - matchLabels:
         rbac.authorization.k8s.io/aggregate-to-poweruser: "true"

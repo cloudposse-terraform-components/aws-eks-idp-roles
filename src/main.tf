@@ -1,5 +1,10 @@
 locals {
   enabled = module.this.enabled
+
+  poweruser_namespaces = var.poweruser_namespaces != null ? var.poweruser_namespaces : [var.stage]
+  chart_values = merge(var.chart_values, {
+    poweruserNamespaces = local.poweruser_namespaces
+  })
 }
 
 module "idp_roles" {
@@ -19,7 +24,7 @@ module "idp_roles" {
   atomic               = var.atomic
   cleanup_on_fail      = var.cleanup_on_fail
   timeout              = var.timeout
-  values               = [yamlencode(var.chart_values)]
+  values               = [yamlencode(local.chart_values)]
 
   eks_cluster_oidc_issuer_url = replace(module.eks.outputs.eks_cluster_identity_oidc_issuer, "https://", "")
 
