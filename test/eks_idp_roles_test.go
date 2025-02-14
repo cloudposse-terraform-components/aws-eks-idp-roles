@@ -4,7 +4,6 @@ import (
 	"testing"
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
-	"github.com/stretchr/testify/assert"
 )
 
 func TestEksIdpRoles(t *testing.T) {
@@ -25,14 +24,6 @@ func TestEksIdpRoles(t *testing.T) {
 	// Init terraform
 	terraform.Init(t, terraformOptions)
 
-	// Clean up resources when test is done
-	// defer terraform.Destroy(t, terraformOptions)
-
-	// Init and apply terraform
-	// terraform.InitAndApply(t, terraformOptions)
-
-	// Run assertions for the test
-	// Example: validate outputs
-	// output := terraform.Output(t, terraformOptions, "output_name")
-	// assert.NotEmpty(t, output)
+	// The rest of this test is intentionally left blank
+	// We are still migrating tests to components and this is a placeholder
 }
