@@ -16,7 +16,7 @@ type ComponentSuite struct {
 func (s *ComponentSuite) TestDisabled() {
 	const component = "eks/idp-roles/disabled"
 	const stack = "default-test"
-	opts := s.GetAtmosOptions(component, stack)
+	opts := s.GetAtmosOptions(component, stack, nil)
 
 	atmos.VendorPull(s)
 

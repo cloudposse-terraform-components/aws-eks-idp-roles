@@ -1,11 +1,10 @@
 module aws-eks-idp-roles-test
 
-go 1.23.5
+go 1.23
 
-require (
-	github.com/cloudposse/test-helpers v0.16.0
-	github.com/gruntwork-io/terratest v0.48.2
-)
+toolchain go1.23.5
+
+require github.com/cloudposse/test-helpers v0.16.0
 
 require (
 	dario.cat/mergo v1.0.1 // indirect
@@ -18,6 +17,7 @@ require (
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/go-logfmt/logfmt v0.6.0 // indirect
+	github.com/gruntwork-io/terratest v0.48.2 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-getter/v2 v2.2.3 // indirect
