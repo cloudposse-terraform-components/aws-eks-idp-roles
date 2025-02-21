@@ -1,8 +1,0 @@
-components:
-  terraform:
-    eks/idp-roles/disabled:
-      metadata:
-        component: target
-      vars:
-        name: "disabled"
-        enabled: false

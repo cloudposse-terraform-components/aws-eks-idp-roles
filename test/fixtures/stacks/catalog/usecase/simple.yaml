@@ -1,8 +1,0 @@
-components:
-  terraform:
-    eks/idp-roles/simple:
-      metadata:
-        component: target
-      vars:
-        name: "simple"
-        enabled: true
