@@ -26,7 +26,7 @@ usage: |-
   <!-- prettier-ignore-start -->
   <!-- prettier-ignore-end -->
 references:
-  - name: ""
+  - name: "Kubernetes authentication"
     description: ""
     url: "https://kubernetes.io/docs/reference/access-authn-authz/authentication/"
 tags:
