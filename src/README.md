@@ -10,7 +10,6 @@ tags:
 
 This component installs the `idp-roles` for EKS clusters. These identity provider roles specify several pre-determined
 permission levels for cluster users and come with bindings that make them easy to assign to Users and Groups.
-
 ## Usage
 
 **Stack Level**: Regional
@@ -31,7 +30,10 @@ components:
 ```
 
 <!-- prettier-ignore-start -->
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- prettier-ignore-end -->
+
+
+<!-- markdownlint-disable -->
 ## Requirements
 
 | Name | Version |
@@ -115,11 +117,17 @@ components:
 | Name | Description |
 |------|-------------|
 | <a name="output_metadata"></a> [metadata](#output\_metadata) | Block status of the deployed release |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-<!-- prettier-ignore-end -->
+<!-- markdownlint-restore -->
+
+
 
 ## References
 
-- https://kubernetes.io/docs/reference/access-authn-authz/authentication/
+
+- [](https://kubernetes.io/docs/reference/access-authn-authz/authentication/) - 
+
+
+
 
 [<img src="https://cloudposse.com/logo-300x69.svg" height="32" align="right"/>](https://cpco.io/homepage?utm_source=github&utm_medium=readme&utm_campaign=cloudposse-terraform-components/aws-eks-idp-roles&utm_content=)
+
