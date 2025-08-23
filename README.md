@@ -187,7 +187,7 @@ Check out these related projects.
 
 For additional context, refer to some of these links.
 
-- [](https://kubernetes.io/docs/reference/access-authn-authz/authentication/) - 
+- [Kubernetes authentication](https://kubernetes.io/docs/reference/access-authn-authz/authentication/) - 
 
 
 
