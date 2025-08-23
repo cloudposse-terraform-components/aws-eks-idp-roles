@@ -124,7 +124,7 @@ components:
 ## References
 
 
-- [](https://kubernetes.io/docs/reference/access-authn-authz/authentication/) - 
+- [Kubernetes authentication](https://kubernetes.io/docs/reference/access-authn-authz/authentication/) - 
 
 
 
