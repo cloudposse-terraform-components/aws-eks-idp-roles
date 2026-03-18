@@ -1,5 +1,4 @@
 locals {
-  enabled = module.this.enabled
 }
 
 module "idp_roles" {
